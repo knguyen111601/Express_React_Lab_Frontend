@@ -14,20 +14,20 @@ const Projects = (props) =>{
 
     const loaded = () => {
         return projects.map((project) => (
-          <div>
+          <div className="projectCard">
             <h1>{project.name}</h1>
             <img src={project.image} />
             <a href={project.git}>
               <button>Github</button>
             </a>
             <a href={project.live}>
-              <button>live site</button>
+              <button>Live Site</button>
             </a>
           </div>
         ));
       };
 
-    return projects ? loaded() : <h1>Loading...</h1>
+    return projects ? <div className="cards">{loaded()}</div> : <h1>Loading...</h1>
 }
 
 export default Projects
